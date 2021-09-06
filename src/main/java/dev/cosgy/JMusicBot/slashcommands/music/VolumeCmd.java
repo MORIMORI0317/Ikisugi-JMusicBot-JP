@@ -40,10 +40,10 @@ public class VolumeCmd extends MusicCommand {
         this.aliases = new String[]{"vol"};
         this.help = "音量を設定または表示します";
         this.aliases = bot.getConfig().getAliases(this.name);
-        this.arguments = "[0-150]";
+        this.arguments = "[0-114514]";
 
         List<OptionData> options = new ArrayList<>();
-        options.add(new OptionData(OptionType.INTEGER, "vol", "音量は0から150までの整数", true));
+        options.add(new OptionData(OptionType.INTEGER, "vol", "音量は0から114514までの整数", true));
         this.options = options;
     }
 
@@ -61,8 +61,8 @@ public class VolumeCmd extends MusicCommand {
             } catch (NumberFormatException e) {
                 nvolume = -1;
             }
-            if (nvolume < 0 || nvolume > 150)
-                event.reply(event.getClient().getError() + " 音量は0から150までの整数でないといけません。");
+            if (nvolume < 0 || nvolume > 114514)
+                event.reply(event.getClient().getError() + " 音量は0から114514までの整数でないといけません。");
             else {
                 handler.getPlayer().setVolume(nvolume);
                 settings.setVolume(nvolume);
@@ -84,8 +84,8 @@ public class VolumeCmd extends MusicCommand {
         } catch (NumberFormatException e) {
             nvolume = -1;
         }
-        if (nvolume < 0 || nvolume > 150)
-            event.reply(client.getError() + " 音量は0から150までの整数でないといけません。").queue();
+        if (nvolume < 0 || nvolume > 114514)
+            event.reply(client.getError() + " 音量は0から114514までの整数でないといけません。").queue();
         else {
             handler.getPlayer().setVolume(nvolume);
             settings.setVolume(nvolume);
