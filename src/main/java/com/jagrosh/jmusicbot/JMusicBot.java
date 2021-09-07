@@ -75,7 +75,7 @@ public class JMusicBot {
             System.out.println("JMusicBot v" + OtherUtil.getCurrentVersion() + "\nby Cosgy Dev");
         }
 
-        java -jar -Dnogui=true JMusicBot-0.6.0-All.jar
+       // java -jar -Dnogui=true -Djava.io.tmpdir=/home/morimori/myfolder/DiscordBot/IkisugiMusicBot//tmp  JMusicBot-0.6.0-All.jar
 
         // create prompt to handle startup
         Prompt prompt = new Prompt("JMusicBot", "noguiモードに切り替えます。  -Dnogui=trueフラグを含めると、手動でnoguiモードで起動できます。");
